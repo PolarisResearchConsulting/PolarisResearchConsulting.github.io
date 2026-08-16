@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-accent="ocean" data-mode-choice="system">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Polaris Insights: practical guides on epidemiology, biostatistics, research methodology and academic publishing." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Polaris Insights | Biomedical Research & Publication</title>
+  <link rel="icon" href="../assets/images/polaris-logo.jpg" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../" aria-label="Polaris Research home">
+        <span class="brand-mark"><img src="../assets/images/polaris-logo.jpg" alt="Polaris Research logo" /></span>
+        <span class="brand-text">
+          <strong>Polaris Research</strong>
+          <span>Research &amp; Biostatistics Consulting</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="../#services">Services</a>
+        <a href="../#studio">SampleSize Studio</a>
+        <a href="./">Insights</a>
+        <a href="../#process">How We Work</a>
+        <a href="../#" class="contact-trigger">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeButton" aria-label="Open theme settings" title="Theme settings">◐</button>
+        <button class="menu-btn" id="menuButton" aria-label="Open menu" title="Menu">☰</button>
+      </div>
+    </div>
+
+    <div class="container mobile-menu" id="mobileMenu">
+      <a href="../#services">Services</a>
+      <a href="../#studio">SampleSize Studio</a>
+      <a href="./">Insights</a>
+      <a href="../#process">How We Work</a>
+      <a href="../#" class="contact-trigger">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="blog-hero">
+      <div class="container blog-hero-grid">
+        <div>
+          <span class="eyebrow">Polaris Insights</span>
+          <h1>Biomedical research, made clearer.</h1>
+          <p class="hero-sub">
+            Practical guides on epidemiology, biostatistics, research methodology and academic publishing—written to be useful at the desk, in the clinic and during manuscript preparation.
+          </p>
+        </div>
+
+        <div class="blog-tools">
+          <label class="blog-search" for="articleSearch">
+            <span aria-hidden="true">⌕</span>
+            <input id="articleSearch" type="search" placeholder="Search Polaris Insights..." autocomplete="off" />
+          </label>
+
+          <div class="blog-filters" aria-label="Article categories">
+            <button class="blog-filter active" data-category="All">All</button>
+            <button class="blog-filter" data-category="Epidemiology Simplified">Epidemiology</button>
+            <button class="blog-filter" data-category="Biostatistics in Practice">Biostatistics</button>
+            <button class="blog-filter" data-category="Academic Publishing Playbook">Publishing</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-library">
+      <div class="container">
+        <div id="articleGrid" class="blog-library-grid" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong style="color:var(--text);">Polaris Research</strong><br />
+        <span>Research and statistical consultancy services.</span>
+      </div>
+      <div class="footer-links">
+        <a href="../">Home</a>
+        <a href="../#services">Services</a>
+        <a href="../#studio">SampleSize Studio</a>
+        <a href="mailto:polarisresearch2025@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="theme-panel" id="themePanel" aria-hidden="true">
+    <div class="theme-title">Appearance</div>
+    <div class="theme-options">
+      <button class="theme-chip" data-mode="light">Light</button>
+      <button class="theme-chip" data-mode="system">System</button>
+      <button class="theme-chip" data-mode="dark">Dark</button>
+    </div>
+    <div class="theme-title">Accent</div>
+    <div class="theme-options">
+      <button class="theme-chip" data-accent="ocean">Ocean</button>
+      <button class="theme-chip" data-accent="sage">Sage</button>
+      <button class="theme-chip" data-accent="lavender">Lavender</button>
+      <button class="theme-chip" data-accent="slate">Slate</button>
+      <button class="theme-chip" data-accent="sand">Sand</button>
+      <button class="theme-chip" data-accent="rose">Rose</button>
+    </div>
+  </div>
+
+  <div class="contact-modal" id="contactModal" aria-hidden="true">
+    <div class="contact-card" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+      <button class="close-modal" id="closeModal" aria-label="Close contact options">×</button>
+      <h3 id="contactTitle">Contact Polaris Research</h3>
+      <p>Email us to discuss your research, biostatistics, or manuscript requirements.</p>
+      <div class="contact-options">
+        <a class="contact-option" href="mailto:polarisresearch2025@gmail.com">
+          <div><strong>Email</strong><span>polarisresearch2025@gmail.com</span></div>
+          <span class="contact-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/app.js" defer></script>
+  <script src="posts-data.js" defer></script>
+  <script src="../assets/js/blog.js" defer></script>
+</body>
+</html>
