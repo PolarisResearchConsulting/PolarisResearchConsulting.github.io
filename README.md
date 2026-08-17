@@ -71,7 +71,7 @@ The next production tasks should include:
 The public website uses email-only contact:
 `polarisresearch2025@gmail.com`
 
-No public phone number or WhatsApp contact is included.
+Public contact is provided by email only.
 
 
 ## Phase 2 — Polaris Insights
@@ -90,3 +90,8 @@ Features:
 - direct-browser and GitHub Pages compatibility.
 
 See `blog/AUTHORING_GUIDE.md` for the publishing workflow.
+
+
+## Phase 3 — SEO
+
+See `SEO_GUIDE.md` for the technical SEO setup and Google Search Console workflow.
