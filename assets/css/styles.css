@@ -11,7 +11,8 @@
       --accent: #5b8fd8;
       --accent-2: #9ec5ef;
       --accent-soft: rgba(91, 143, 216, 0.14);
-      --accent-text: #ffffff;
+      --accent-readable: #2563eb;
+      --accent-text: #0f172a;
 
       --radius-lg: 28px;
       --radius-md: 20px;
@@ -29,37 +30,44 @@
       --border: #22314c;
       --shadow: 0 22px 60px rgba(0, 0, 0, 0.36);
       --shadow-soft: 0 10px 34px rgba(0, 0, 0, 0.24);
+      --accent-readable: var(--accent);
     }
 
     html[data-accent="ocean"] {
       --accent: #5b8fd8;
       --accent-2: #9ec5ef;
       --accent-soft: rgba(91, 143, 216, 0.14);
+      --accent-readable: #2563eb;
     }
     html[data-accent="sage"] {
       --accent: #6f9f82;
       --accent-2: #b7d6c1;
       --accent-soft: rgba(111, 159, 130, 0.14);
+      --accent-readable: #2f855a;
     }
     html[data-accent="lavender"] {
       --accent: #9a7fd1;
       --accent-2: #d3c3ef;
       --accent-soft: rgba(154, 127, 209, 0.14);
+      --accent-readable: #6d28d9;
     }
     html[data-accent="slate"] {
       --accent: #7d8b9b;
       --accent-2: #c1cad4;
       --accent-soft: rgba(125, 139, 155, 0.15);
+      --accent-readable: #475569;
     }
     html[data-accent="sand"] {
       --accent: #b49768;
       --accent-2: #dfc89d;
       --accent-soft: rgba(180, 151, 104, 0.15);
+      --accent-readable: #8a5206;
     }
     html[data-accent="rose"] {
       --accent: #c77b8d;
       --accent-2: #e8b4c0;
       --accent-soft: rgba(199, 123, 141, 0.15);
+      --accent-readable: #be123c;
     }
 
     * {
@@ -301,7 +309,7 @@
     .btn-studio {
       margin-top: 2px;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: white;
+      color: var(--accent-text);
     }
 
     .quick-tags {
@@ -476,7 +484,7 @@
     }
 
     .section-kicker {
-      color: var(--accent);
+      color: var(--accent-readable);
       font-weight: 850;
       text-transform: uppercase;
       letter-spacing: .08em;
@@ -655,7 +663,7 @@
     }
 
     .blog-card .category {
-      color: var(--accent);
+      color: var(--accent-readable);
       font-size: .79rem;
       font-weight: 850;
       text-transform: uppercase;
@@ -1267,7 +1275,7 @@
 }
 
 .article-category {
-  color: var(--accent);
+  color: var(--accent-readable);
 }
 
 .article-card h2 {
@@ -1285,7 +1293,7 @@
 
 .article-card .article-link {
   margin-top: auto;
-  color: var(--accent);
+  color: var(--accent-readable);
   font-weight: 820;
 }
 
@@ -1523,4 +1531,18 @@
     height: 100%;
     align-self: stretch;
   }
+}
+
+
+/* Phase 4 accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--accent-readable);
+  outline-offset: 3px;
+}
+
+.btn-primary,
+.btn-studio {
+  color: var(--accent-text);
 }

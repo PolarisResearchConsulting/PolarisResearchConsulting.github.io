@@ -95,3 +95,12 @@ See `blog/AUTHORING_GUIDE.md` for the publishing workflow.
 ## Phase 3 — SEO
 
 See `SEO_GUIDE.md` for the technical SEO setup and Google Search Console workflow.
+
+
+## Phase 4 — Accessibility contrast refinement
+
+The pastel theme remains unchanged visually, but foreground colors were separated from decorative accent colors so that:
+- primary buttons use dark readable text on pastel backgrounds,
+- section kickers and blog categories use darker accessible accent text in light mode,
+- dark mode retains pastel accent text where contrast is already sufficient,
+- keyboard focus indicators are more visible.
