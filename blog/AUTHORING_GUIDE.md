@@ -67,7 +67,7 @@ The blog library will automatically:
 - sort articles newest-first,
 - support keyword search,
 - support category filters,
-- work in light/dark mode and all Polaris accent themes.
+- inherit the current Polaris Research editorial styling automatically.
 
 ## Writing workflow
 

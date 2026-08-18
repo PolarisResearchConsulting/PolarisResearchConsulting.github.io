@@ -1,6 +1,6 @@
 # Polaris Research — Production Website
 
-This folder is the production-structured version of the approved Polaris Research baseline website.
+This folder is the production-ready Polaris Research website using the 2026 editorial redesign: warm ivory surfaces, deep navy typography, dusty-rose accents, serif-led typography, and responsive layouts.
 
 ## Structure
 
@@ -21,7 +21,7 @@ polaris-research-production/
 
 ## What changed from the single-file prototype
 
-The appearance and user-facing behavior were preserved, while the code was separated into maintainable production assets:
+The website is separated into maintainable production assets:
 
 - HTML → `index.html`
 - CSS → `assets/css/styles.css`
@@ -83,7 +83,7 @@ Features:
 - keyword search,
 - category filtering,
 - responsive article cards,
-- dark mode and pastel accent themes,
+- a consistent editorial Polaris Research visual system,
 - reusable long-form article template,
 - lightweight metadata registry in `blog/posts-data.js`,
 - no database or CMS dependency,
@@ -97,10 +97,6 @@ See `blog/AUTHORING_GUIDE.md` for the publishing workflow.
 See `SEO_GUIDE.md` for the technical SEO setup and Google Search Console workflow.
 
 
-## Phase 4 — Accessibility contrast refinement
+## 2026 editorial redesign
 
-The pastel theme remains unchanged visually, but foreground colors were separated from decorative accent colors so that:
-- primary buttons use dark readable text on pastel backgrounds,
-- section kickers and blog categories use darker accessible accent text in light mode,
-- dark mode retains pastel accent text where contrast is already sufficient,
-- keyboard focus indicators are more visible.
+The public website now uses a restrained academic/editorial visual system inspired by the approved mockup. The redesign keeps the existing SEO, blog architecture, legal information, contact workflow, and SampleSize Studio integration while simplifying the interface and improving responsive behavior.

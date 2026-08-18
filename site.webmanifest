@@ -3,8 +3,8 @@
   "short_name": "Polaris Research",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f7f9fc",
-  "theme_color": "#0b1220",
+  "background_color": "#fbf8f3",
+  "theme_color": "#0c2747",
   "icons": [
     {
       "src": "/assets/images/polaris-logo.jpg",

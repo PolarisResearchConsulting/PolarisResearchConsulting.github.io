@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-accent="ocean" data-mode-choice="system">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="REPLACE_WITH_ARTICLE_DESCRIPTION" />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0b1220" />
-    <link rel="canonical" href="REPLACE_WITH_CANONICAL_URL" />
+  <meta name="theme-color" content="#0c2747" />
+  <link rel="canonical" href="REPLACE_WITH_CANONICAL_URL" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Polaris Research" />
   <meta property="og:title" content="REPLACE_WITH_ARTICLE_TITLE" />
@@ -22,102 +22,42 @@
   <link rel="stylesheet" href="../../assets/css/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="../../">
-        <span class="brand-mark"><img src="../../assets/images/polaris-logo.jpg" alt="Polaris Research logo" /></span>
-        <span class="brand-text"><strong>Polaris Research</strong><span>Research &amp; Biostatistics Consulting</span></span>
-      </a>
-      <nav class="nav-links">
-        <a href="../../#services">Services</a>
-        <a href="../../#studio">SampleSize Studio</a>
-        <a href="../">Insights</a>
-        <a href="../../#process">How We Work</a>
-      </nav>
-      <div class="nav-actions">
-        <button class="icon-btn" id="themeButton" aria-label="Open theme settings">◐</button>
-        <button class="menu-btn" id="menuButton" aria-label="Open menu">☰</button>
-      </div>
+      <a class="brand" href="../../" aria-label="Polaris Research home"><span class="brand-mark"><img src="../../assets/images/polaris-logo.jpg" alt="Polaris Research logo" /></span><span class="brand-text"><strong>Polaris Research</strong><span>Research &amp; Biostatistics Consulting</span></span></a>
+      <nav class="nav-links" aria-label="Primary navigation"><a href="../../#services">Services</a><a href="../../#studio">SampleSize Studio</a><a href="../">Insights</a><a href="../../#process">How We Work</a><a href="../../#about">About</a></nav>
+      <div class="nav-actions"><a class="header-cta" href="mailto:polarisresearch2025@gmail.com">Contact</a><button class="menu-btn" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button></div>
     </div>
-    <div class="container mobile-menu" id="mobileMenu">
-      <a href="../../#services">Services</a>
-      <a href="../../#studio">SampleSize Studio</a>
-      <a href="../">Insights</a>
-      <a href="../../#process">How We Work</a>
-    </div>
+    <nav class="container mobile-menu" id="mobileMenu" aria-label="Mobile navigation"><a href="../../#services">Services</a><a href="../../#studio">SampleSize Studio</a><a href="../">Insights</a><a href="../../#process">How We Work</a><a href="../../#about">About</a><a class="header-cta" href="mailto:polarisresearch2025@gmail.com">Contact</a></nav>
   </header>
 
-  <main class="article-shell">
+  <main class="article-shell" id="main">
     <div class="container">
       <a class="article-back" href="../">← Back to Polaris Insights</a>
-
       <div class="article-layout">
         <article>
           <header class="article-header">
-            <div class="article-meta">
-              <span class="article-category">REPLACE_WITH_CATEGORY</span>
-              <span>•</span>
-              <span>REPLACE_WITH_DATE</span>
-              <span>•</span>
-              <span>REPLACE_WITH_READING_TIME</span>
-            </div>
+            <div class="article-meta"><span class="article-category">REPLACE_WITH_CATEGORY</span><span>•</span><span>REPLACE_WITH_DATE</span><span>•</span><span>REPLACE_WITH_READING_TIME</span></div>
             <h1>REPLACE_WITH_ARTICLE_TITLE</h1>
             <p class="article-deck">REPLACE_WITH_SHORT_DECK_OR_SUMMARY</p>
           </header>
-
           <div class="article-body">
             <p>Replace this paragraph with the opening of the article.</p>
-
-            <h2 id="section-one">First section heading</h2>
-            <p>Article text goes here.</p>
-
-            <h2 id="section-two">Second section heading</h2>
-            <p>Article text goes here.</p>
-
-            <div class="article-formula">
-              Formula or statistical expression can be placed here.
-            </div>
-
-            <h2 id="references">References</h2>
-            <p>Add references or source links here as appropriate.</p>
+            <h2 id="section-one">First section heading</h2><p>Article text goes here.</p>
+            <h2 id="section-two">Second section heading</h2><p>Article text goes here.</p>
+            <div class="article-formula">Formula or statistical expression can be placed here.</div>
+            <h2 id="references">References</h2><p>Add references or source links here as appropriate.</p>
           </div>
         </article>
-
-        <aside class="article-sidebar">
-          <strong>On this page</strong>
-          <a href="#section-one">First section</a>
-          <a href="#section-two">Second section</a>
-          <a href="#references">References</a>
-        </aside>
+        <aside class="article-sidebar"><strong>On this page</strong><a href="#section-one">First section</a><a href="#section-two">Second section</a><a href="#references">References</a></aside>
       </div>
     </div>
   </main>
 
   <footer>
-    <div class="container footer-grid">
-      <div><strong style="color:var(--text);">Polaris Research</strong><br /><span>Polaris Insights</span></div>
-      <div class="footer-links"><a href="../../">Home</a><a href="../">All Articles</a><a href="mailto:polarisresearch2025@gmail.com">Email</a></div>
-    </div>
+    <div class="container"><div class="footer-main"><div><div class="footer-brand"><span class="brand-mark"><img src="../../assets/images/polaris-logo.jpg" alt="" /></span><div><strong>Polaris Research</strong><span>Polaris Insights</span></div></div></div><div class="footer-col"><h3>Explore</h3><a href="../../">Home</a><a href="../">All Articles</a></div><div class="footer-col"><h3>Research</h3><a href="../../#services">Services</a><a href="../../#studio">SampleSize Studio</a></div><div class="footer-col"><h3>Contact</h3><a href="mailto:polarisresearch2025@gmail.com">polarisresearch2025@gmail.com</a></div></div><div class="footer-bottom"><span>© 2026 Polaris Consulting. All rights reserved.</span></div></div>
   </footer>
-
-  <div class="theme-panel" id="themePanel" aria-hidden="true">
-    <div class="theme-title">Appearance</div>
-    <div class="theme-options">
-      <button class="theme-chip" data-mode="light">Light</button>
-      <button class="theme-chip" data-mode="system">System</button>
-      <button class="theme-chip" data-mode="dark">Dark</button>
-    </div>
-    <div class="theme-title">Accent</div>
-    <div class="theme-options">
-      <button class="theme-chip" data-accent="ocean">Ocean</button>
-      <button class="theme-chip" data-accent="sage">Sage</button>
-      <button class="theme-chip" data-accent="lavender">Lavender</button>
-      <button class="theme-chip" data-accent="slate">Slate</button>
-      <button class="theme-chip" data-accent="sand">Sand</button>
-      <button class="theme-chip" data-accent="rose">Rose</button>
-    </div>
-  </div>
-
   <script src="../../assets/js/app.js" defer></script>
 </body>
 </html>
