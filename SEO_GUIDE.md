@@ -18,19 +18,19 @@ The website now contains the technical SEO basics needed before submitting it to
 ## Live URLs
 
 Main website:
-https://polarisresearchconsulting.github.io/
+https://polarisresearchconsulting.com/
 
 Polaris Insights:
-https://polarisresearchconsulting.github.io/blog/
+https://polarisresearchconsulting.com/blog/
 
 SampleSize Studio:
-https://polarisresearchconsulting.github.io/SampleSizeStudio/
+https://polarisresearchconsulting.com/SampleSizeStudio/
 
 Sitemap:
-https://polarisresearchconsulting.github.io/sitemap.xml
+https://polarisresearchconsulting.com/sitemap.xml
 
 Robots file:
-https://polarisresearchconsulting.github.io/robots.txt
+https://polarisresearchconsulting.com/robots.txt
 
 ## Important
 

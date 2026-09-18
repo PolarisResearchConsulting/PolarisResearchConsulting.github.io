@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://polarisresearchconsulting.github.io/</loc>
+    <loc>https://polarisresearchconsulting.com/</loc>
+    <lastmod>2026-09-18</lastmod>
   </url>
   <url>
-    <loc>https://polarisresearchconsulting.github.io/blog/</loc>
+    <loc>https://polarisresearchconsulting.com/blog/</loc>
+    <lastmod>2026-09-18</lastmod>
   </url>
   <url>
-    <loc>https://polarisresearchconsulting.github.io/SampleSizeStudio/</loc>
+    <loc>https://polarisresearchconsulting.com/SampleSizeStudio/</loc>
   </url>
 </urlset>
