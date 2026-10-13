@@ -6,7 +6,7 @@
   <meta name="description" content="REPLACE_WITH_ARTICLE_DESCRIPTION" />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0b1220" />
-    <link rel="canonical" href="REPLACE_WITH_CANONICAL_URL" />
+  <link rel="canonical" href="REPLACE_WITH_CANONICAL_URL" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Polaris Research" />
   <meta property="og:title" content="REPLACE_WITH_ARTICLE_TITLE" />
@@ -17,23 +17,23 @@
   <meta name="twitter:title" content="REPLACE_WITH_ARTICLE_TITLE" />
   <meta name="twitter:description" content="REPLACE_WITH_ARTICLE_DESCRIPTION" />
   <meta name="twitter:image" content="https://polarisresearchconsulting.com/assets/images/polaris-logo.jpg" />
-    <!-- Google Search Console verification meta tag can be added here when available. -->
   <title>REPLACE_WITH_ARTICLE_TITLE | Polaris Insights</title>
   <link rel="icon" href="../../assets/images/polaris-logo.jpg" />
-<link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="../../">
+      <a class="brand" href="../../" aria-label="Polaris Research home">
         <span class="brand-mark"><img src="../../assets/images/polaris-logo.jpg" alt="Polaris Research logo" /></span>
         <span class="brand-text"><strong>Polaris Research</strong><span>Research &amp; Biostatistics Consulting</span></span>
       </a>
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Primary navigation">
         <a href="../../#services">Services</a>
         <a href="../../#studio">SampleSize Studio</a>
         <a href="../">Insights</a>
         <a href="../../#process">How We Work</a>
+        <a href="../../#" class="contact-trigger">Contact</a>
       </nav>
       <div class="nav-actions">
         <button class="icon-btn" id="themeButton" aria-label="Open theme settings">◐</button>
@@ -45,49 +45,41 @@
       <a href="../../#studio">SampleSize Studio</a>
       <a href="../">Insights</a>
       <a href="../../#process">How We Work</a>
+      <a href="../../#" class="contact-trigger">Contact</a>
     </div>
   </header>
 
-  <main class="article-shell">
+  <main class="article-shell article-page">
     <div class="container">
       <a class="article-back" href="../">← Back to Polaris Insights</a>
 
-      <div class="article-layout">
-        <article>
-          <header class="article-header">
-            <div class="article-meta">
-              <span class="article-category">REPLACE_WITH_CATEGORY</span>
-              <span>•</span>
-              <span>REPLACE_WITH_DATE</span>
-              <span>•</span>
-              <span>REPLACE_WITH_READING_TIME</span>
-            </div>
-            <h1>REPLACE_WITH_ARTICLE_TITLE</h1>
-            <p class="article-deck">REPLACE_WITH_SHORT_DECK_OR_SUMMARY</p>
-          </header>
+      <header class="article-hero REPLACE_WITH_CATEGORY_COLOR_CLASS">
+        <div class="article-meta">
+          <span class="magazine-category">REPLACE_WITH_CATEGORY</span>
+          <span>REPLACE_WITH_DATE</span>
+          <span>•</span>
+          <span>REPLACE_WITH_READING_TIME</span>
+        </div>
+        <h1>REPLACE_WITH_ARTICLE_TITLE</h1>
+        <p class="article-deck">REPLACE_WITH_SHORT_DECK_OR_SUMMARY</p>
+      </header>
 
+      <div class="article-layout article-layout-refined">
+        <article>
           <div class="article-body">
             <p>Replace this paragraph with the opening of the article.</p>
-
             <h2 id="section-one">First section heading</h2>
             <p>Article text goes here.</p>
-
-            <h2 id="section-two">Second section heading</h2>
-            <p>Article text goes here.</p>
-
-            <div class="article-formula">
-              Formula or statistical expression can be placed here.
-            </div>
-
             <h2 id="references">References</h2>
-            <p>Add references or source links here as appropriate.</p>
+            <ol class="reference-list">
+              <li>Add references in Vancouver format.</li>
+            </ol>
           </div>
         </article>
 
         <aside class="article-sidebar">
           <strong>On this page</strong>
           <a href="#section-one">First section</a>
-          <a href="#section-two">Second section</a>
           <a href="#references">References</a>
         </aside>
       </div>
