@@ -2242,19 +2242,7 @@ html[data-mode="dark"] .topic-arrow {
 }
 
 .featured-story::after {
-  content: "↗";
-  position: absolute;
-  right: clamp(22px, 4vw, 44px);
-  bottom: clamp(22px, 4vw, 38px);
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--category-ink) 22%, var(--border));
-  background: color-mix(in srgb, var(--surface) 70%, transparent);
-  color: var(--category-ink);
-  font-size: 1.4rem;
+  display: none;
 }
 
 .featured-story-top {
@@ -2326,8 +2314,13 @@ html[data-mode="dark"] .topic-arrow {
 }
 
 .featured-story .story-arrow {
-  opacity: 0;
-  pointer-events: none;
+  opacity: 1;
+  pointer-events: auto;
+  width: 52px;
+  height: 52px;
+  font-size: 1.35rem;
+  position: relative;
+  z-index: 2;
 }
 
 .latest-head {
@@ -2639,8 +2632,8 @@ html[data-mode="dark"] .topic-arrow {
   }
 
   .featured-story::after {
-    display: none;
-  }
+  display: none;
+}
 
   .article-hero {
     padding: 24px;
