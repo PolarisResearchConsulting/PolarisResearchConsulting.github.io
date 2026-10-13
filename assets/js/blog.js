@@ -1,13 +1,23 @@
-
 (function () {
   const posts = Array.isArray(window.POLARIS_POSTS) ? window.POLARIS_POSTS : [];
   const grid = document.getElementById('articleGrid');
+  const featured = document.getElementById('featuredArticle');
   const search = document.getElementById('articleSearch');
-  const filters = Array.from(document.querySelectorAll('.blog-filter'));
+  const categoryButtons = Array.from(document.querySelectorAll('[data-category]'));
+  const summary = document.getElementById('resultsSummary');
+  const featuredHeading = document.getElementById('featuredHeading');
+
   let activeCategory = 'All';
 
+  const categoryClasses = {
+    'Research Methodology': 'category-research',
+    'Epidemiology Simplified': 'category-epidemiology',
+    'Biostatistics in Practice': 'category-biostatistics',
+    'Academic Publishing Playbook': 'category-publishing'
+  };
+
   function escapeHTML(value) {
-    return String(value)
+    return String(value ?? '')
       .replaceAll('&', '&amp;')
       .replaceAll('<', '&lt;')
       .replaceAll('>', '&gt;')
@@ -26,8 +36,13 @@
     });
   }
 
+  function categoryClass(category) {
+    return categoryClasses[category] || 'category-research';
+  }
+
   function filteredPosts() {
     const term = (search?.value || '').trim().toLowerCase();
+
     return posts
       .filter(post => activeCategory === 'All' || post.category === activeCategory)
       .filter(post => {
@@ -40,45 +55,104 @@
       .sort((a, b) => String(b.date).localeCompare(String(a.date)));
   }
 
-  function render() {
+  function renderFeatured(post) {
+    if (!featured) return;
+
+    if (!post) {
+      featured.innerHTML = `
+        <div class="blog-empty magazine-empty">
+          <h2>No articles match this selection.</h2>
+          <p>Try another category or search term.</p>
+        </div>`;
+      return;
+    }
+
+    featured.innerHTML = `
+      <article class="featured-story ${categoryClass(post.category)}">
+        <div class="featured-story-top">
+          <span class="magazine-category">${escapeHTML(post.category)}</span>
+          ${post.featured ? '<span class="featured-label">Featured</span>' : ''}
+        </div>
+        <h3><a href="${escapeHTML(post.href)}">${escapeHTML(post.title)}</a></h3>
+        <p>${escapeHTML(post.excerpt)}</p>
+        <div class="story-footer">
+          <span>${escapeHTML(formatDate(post.date))}</span>
+          ${post.readingTime ? `<span>•</span><span>${escapeHTML(post.readingTime)}</span>` : ''}
+          <a class="story-arrow" href="${escapeHTML(post.href)}" aria-label="Read ${escapeHTML(post.title)}">→</a>
+        </div>
+      </article>`;
+  }
+
+  function renderGrid(items) {
     if (!grid) return;
-    const items = filteredPosts();
 
     if (!items.length) {
       grid.innerHTML = `
-        <div class="blog-empty">
-          <h2>${posts.length ? 'No articles match this search.' : 'Polaris Insights is being prepared.'}</h2>
-          <p>${posts.length
-            ? 'Try another keyword or category.'
-            : 'The publishing system is now ready. New articles on epidemiology, biostatistics and academic publishing can be added without changing the homepage.'}</p>
+        <div class="blog-empty magazine-empty">
+          <h2>More articles are on the way.</h2>
+          <p>Polaris Insights will continue to grow across research methodology, epidemiology, biostatistics and academic publishing.</p>
         </div>`;
       return;
     }
 
     grid.innerHTML = items.map(post => `
-      <article class="article-card">
-        <div class="article-meta">
-          <span class="article-category">${escapeHTML(post.category || '')}</span>
-          <span>•</span>
+      <article class="article-card magazine-card ${categoryClass(post.category)}">
+        <span class="magazine-category">${escapeHTML(post.category)}</span>
+        <h2><a href="${escapeHTML(post.href)}">${escapeHTML(post.title)}</a></h2>
+        <p>${escapeHTML(post.excerpt)}</p>
+        <div class="story-footer">
           <span>${escapeHTML(formatDate(post.date))}</span>
           ${post.readingTime ? `<span>•</span><span>${escapeHTML(post.readingTime)}</span>` : ''}
+          <a class="story-arrow" href="${escapeHTML(post.href)}" aria-label="Read ${escapeHTML(post.title)}">→</a>
         </div>
-        <h2>${escapeHTML(post.title || '')}</h2>
-        <p>${escapeHTML(post.excerpt || '')}</p>
-        <a class="article-link" href="${escapeHTML(post.href || '#')}">Read article →</a>
       </article>
     `).join('');
+  }
+
+  function render() {
+    const items = filteredPosts();
+    const lead = items[0] || null;
+    const rest = items.slice(1);
+
+    if (featuredHeading) {
+      featuredHeading.textContent = activeCategory === 'All'
+        ? 'Featured article'
+        : activeCategory;
+    }
+
+    renderFeatured(lead);
+    renderGrid(rest);
+
+    if (summary) {
+      if (!items.length) {
+        summary.textContent = '0 articles';
+      } else {
+        summary.textContent = `${items.length} article${items.length === 1 ? '' : 's'}`;
+      }
+    }
+
+    categoryButtons.forEach(button => {
+      button.classList.toggle('active', (button.dataset.category || 'All') === activeCategory);
+    });
+  }
+
+  function chooseCategory(category) {
+    activeCategory = category || 'All';
+    render();
+
+    const library = document.getElementById('all-articles');
+    if (library && activeCategory !== 'All') {
+      library.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   if (search) {
     search.addEventListener('input', render);
   }
 
-  filters.forEach(button => {
+  categoryButtons.forEach(button => {
     button.addEventListener('click', function () {
-      activeCategory = this.dataset.category || 'All';
-      filters.forEach(btn => btn.classList.toggle('active', btn === this));
-      render();
+      chooseCategory(this.dataset.category || 'All');
     });
   });
 
