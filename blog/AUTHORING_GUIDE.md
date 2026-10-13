@@ -1,6 +1,17 @@
 # Polaris Insights — Publishing Guide
 
-The blog architecture is now separated from the homepage. New articles can be published without redesigning the main Polaris Research website.
+Polaris Insights is the editorial section of the Polaris Research website.
+
+## Permanent categories
+
+Use one of these four categories for every article:
+
+- `Research Methodology`
+- `Epidemiology Simplified`
+- `Biostatistics in Practice`
+- `Academic Publishing Playbook`
+
+Each category has its own pastel card treatment on the blog homepage.
 
 ## Blog files
 
@@ -10,7 +21,8 @@ blog/
 ├── posts-data.js
 ├── AUTHORING_GUIDE.md
 └── articles/
-    └── _article-template.html
+    ├── _article-template.html
+    └── published-article.html
 ```
 
 ## Publishing a new article
@@ -25,26 +37,28 @@ Rename it using a lowercase, hyphenated slug, for example:
 
 `understanding-confidence-intervals.html`
 
-### 2. Replace the article placeholders
+### 2. Replace the placeholders
 
 Update:
+
 - page title
 - meta description
+- canonical URL
 - category
 - publication date
 - reading time
 - article headline
-- short deck/summary
+- short deck
 - article body
 - sidebar table of contents
 - references
 
-Use one of the current public categories:
-- `Epidemiology Simplified`
-- `Biostatistics in Practice`
-- `Academic Publishing Playbook`
+For the article hero color, use the matching class:
 
-More categories can be added later.
+- Research Methodology → `category-research`
+- Epidemiology Simplified → `category-epidemiology`
+- Biostatistics in Practice → `category-biostatistics`
+- Academic Publishing Playbook → `category-publishing`
 
 ### 3. Register the article in `posts-data.js`
 
@@ -56,34 +70,41 @@ Add an object inside `window.POLARIS_POSTS`:
   title: "Understanding Confidence Intervals in Clinical Research",
   excerpt: "A practical guide to what confidence intervals mean and how to report them.",
   category: "Biostatistics in Practice",
-  date: "2026-08-16",
+  date: "2026-10-20",
   readingTime: "7 min read",
-  href: "articles/understanding-confidence-intervals.html"
+  href: "articles/understanding-confidence-intervals.html",
+  featured: false
 }
 ```
 
-The blog library will automatically:
-- create the article card,
+Set `featured: true` only for the article that should be highlighted most prominently.
+
+### 4. Add the public URL to `sitemap.xml`
+
+Every published article should have its own sitemap entry.
+
+## What the blog does automatically
+
+The blog homepage will:
+
+- display the first matching article as the featured story,
+- display remaining articles as pastel magazine cards,
 - sort articles newest-first,
-- support keyword search,
-- support category filters,
-- inherit the current Polaris Research editorial styling automatically.
+- search title, excerpt and category,
+- filter by the four permanent categories,
+- retain the Polaris light/dark/accent system,
+- remain responsive on tablets and phones.
 
 ## Writing workflow
 
-For now, the easiest workflow is:
-
-1. Write the article in Word, Google Docs, Markdown, or ChatGPT.
+1. Finalize the article in Word or another writing tool.
 2. Convert the final text into the article template.
 3. Add its metadata to `posts-data.js`.
-4. Upload the two changed files to GitHub.
-
-A CMS can be connected later without changing the public design.
-
-## Direct browser preview
-
-The system deliberately uses `posts-data.js` rather than fetching JSON. This means the blog works when the files are opened directly in a browser as well as on GitHub Pages.
+4. Add its URL to `sitemap.xml`.
+5. Upload the changed files to GitHub.
+6. Confirm the GitHub Pages deployment succeeds.
+7. Test the article and blog homepage on desktop and mobile.
 
 ## Important
 
-Do not put confidential client data, patient information, unpublished client datasets, or private manuscript material in public blog files.
+Do not publish confidential client information, patient identifiers, private datasets, unpublished client manuscripts or other sensitive material.

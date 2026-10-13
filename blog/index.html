@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Polaris Insights: practical guides on epidemiology, biostatistics, research methodology and academic publishing." />
+  <meta name="description" content="Polaris Insights offers practical, accessible guidance on research methodology, epidemiology, biostatistics and academic publishing for medical researchers." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0b1220" />
-    <link rel="canonical" href="https://polarisresearchconsulting.com/blog/" />
+  <link rel="canonical" href="https://polarisresearchconsulting.com/blog/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Polaris Research" />
-  <meta property="og:title" content="Polaris Insights | Biomedical Research & Publication" />
-  <meta property="og:description" content="Practical guides on epidemiology, biostatistics, research methodology and academic publishing." />
+  <meta property="og:title" content="Polaris Insights | Biomedical Research, Made Clearer" />
+  <meta property="og:description" content="Practical guides on research methodology, epidemiology, biostatistics and academic publishing." />
   <meta property="og:url" content="https://polarisresearchconsulting.com/blog/" />
   <meta property="og:image" content="https://polarisresearchconsulting.com/assets/images/polaris-logo.jpg" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Polaris Insights | Biomedical Research & Publication" />
-  <meta name="twitter:description" content="Practical guides on epidemiology, biostatistics, research methodology and academic publishing." />
+  <meta name="twitter:title" content="Polaris Insights | Biomedical Research, Made Clearer" />
+  <meta name="twitter:description" content="Practical guides on research methodology, epidemiology, biostatistics and academic publishing." />
   <meta name="twitter:image" content="https://polarisresearchconsulting.com/assets/images/polaris-logo.jpg" />
-    <!-- Google Search Console verification meta tag can be added here when available. -->
-  <title>Polaris Insights | Biomedical Research & Publication</title>
+  <title>Polaris Insights | Biomedical Research, Made Clearer</title>
   <link rel="icon" href="../assets/images/polaris-logo.jpg" />
-<link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
 
   <script type="application/ld+json">
   {
@@ -28,7 +27,7 @@
     "@type": "Blog",
     "name": "Polaris Insights",
     "url": "https://polarisresearchconsulting.com/blog/",
-    "description": "Practical guides on epidemiology, biostatistics, research methodology and academic publishing.",
+    "description": "Practical guides on research methodology, epidemiology, biostatistics and academic publishing.",
     "publisher": {
       "@type": "Organization",
       "name": "Polaris Research",
@@ -56,7 +55,7 @@
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="../#services">Services</a>
         <a href="../#studio">SampleSize Studio</a>
-        <a href="./">Insights</a>
+        <a href="./" aria-current="page">Insights</a>
         <a href="../#process">How We Work</a>
         <a href="../#" class="contact-trigger">Contact</a>
       </nav>
@@ -76,36 +75,87 @@
     </div>
   </header>
 
-  <main>
-    <section class="blog-hero">
-      <div class="container blog-hero-grid">
-        <div>
+  <main class="insights-home">
+    <section class="insights-hero">
+      <div class="container insights-hero-grid">
+        <div class="insights-intro fade-in">
           <span class="eyebrow">Polaris Insights</span>
           <h1>Biomedical research, made clearer.</h1>
-          <p class="hero-sub">
+          <p>
             Practical guides on epidemiology, biostatistics, research methodology and academic publishing—written to be useful at the desk, in the clinic and during manuscript preparation.
           </p>
+          <a class="insights-text-link" href="#all-articles">Explore all articles <span aria-hidden="true">→</span></a>
         </div>
 
-        <div class="blog-tools">
-          <label class="blog-search" for="articleSearch">
+        <aside class="insights-tool-panel fade-in" aria-label="Search and browse Polaris Insights">
+          <label class="insights-search" for="articleSearch">
             <span aria-hidden="true">⌕</span>
-            <input id="articleSearch" type="search" placeholder="Search Polaris Insights..." autocomplete="off" />
+            <input id="articleSearch" type="search" placeholder="Search articles, topics or keywords..." autocomplete="off" />
           </label>
 
-          <div class="blog-filters" aria-label="Article categories">
-            <button class="blog-filter active" data-category="All">All</button>
-            <button class="blog-filter" data-category="Epidemiology Simplified">Epidemiology</button>
-            <button class="blog-filter" data-category="Biostatistics in Practice">Biostatistics</button>
-            <button class="blog-filter" data-category="Academic Publishing Playbook">Publishing</button>
+          <div class="browse-row">
+            <strong>Browse by topic</strong>
+            <button class="topic-reset" type="button" data-category="All">View all topics →</button>
           </div>
-        </div>
+
+          <div class="topic-card-grid" aria-label="Article categories">
+            <button class="topic-card category-research" type="button" data-category="Research Methodology">
+              <span class="topic-icon" aria-hidden="true">▤</span>
+              <span class="topic-copy">
+                <strong>Research Methodology</strong>
+                <small>Study design, research questions, objectives and methods.</small>
+              </span>
+              <span class="topic-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button class="topic-card category-epidemiology" type="button" data-category="Epidemiology Simplified">
+              <span class="topic-icon" aria-hidden="true">◉</span>
+              <span class="topic-copy">
+                <strong>Epidemiology Simplified</strong>
+                <small>Measures, bias, association and population-level concepts.</small>
+              </span>
+              <span class="topic-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button class="topic-card category-biostatistics" type="button" data-category="Biostatistics in Practice">
+              <span class="topic-icon" aria-hidden="true">∑</span>
+              <span class="topic-copy">
+                <strong>Biostatistics in Practice</strong>
+                <small>Statistical methods, analysis and interpretation made practical.</small>
+              </span>
+              <span class="topic-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button class="topic-card category-publishing" type="button" data-category="Academic Publishing Playbook">
+              <span class="topic-icon" aria-hidden="true">▱</span>
+              <span class="topic-copy">
+                <strong>Academic Publishing Playbook</strong>
+                <small>From manuscript preparation to peer review and submission.</small>
+              </span>
+              <span class="topic-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="blog-library">
+    <section class="insights-library" id="all-articles">
       <div class="container">
-        <div id="articleGrid" class="blog-library-grid" aria-live="polite"></div>
+        <div class="insights-section-head">
+          <div>
+            <div class="section-kicker">Polaris Insights</div>
+            <h2 id="featuredHeading">Featured article</h2>
+          </div>
+          <button class="all-articles-reset" type="button" data-category="All">View all articles →</button>
+        </div>
+
+        <div id="featuredArticle" aria-live="polite"></div>
+
+        <div class="latest-head">
+          <h2>Latest articles</h2>
+          <span id="resultsSummary" class="results-summary"></span>
+        </div>
+        <div id="articleGrid" class="blog-library-grid magazine-grid" aria-live="polite"></div>
       </div>
     </section>
   </main>

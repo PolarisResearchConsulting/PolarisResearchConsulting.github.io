@@ -1,13 +1,12 @@
 window.POLARIS_POSTS = [
-  // Publish posts by adding objects here.
-  // Example:
-  // {
-  //   slug: "understanding-confidence-intervals",
-  //   title: "Understanding Confidence Intervals in Clinical Research",
-  //   excerpt: "A practical guide to what confidence intervals mean and how to report them.",
-  //   category: "Biostatistics in Practice",
-  //   date: "2026-08-16",
-  //   readingTime: "7 min read",
-  //   href: "articles/understanding-confidence-intervals.html"
-  // }
+  {
+    slug: "how-to-formulate-a-research-question-in-medical-research",
+    title: "How to Formulate a Research Question in Medical Research?",
+    excerpt: "Learn how to turn a broad medical research idea into a clear, focused, and feasible research question using knowledge gaps, structured frameworks such as PICO, and the SMART criteria.",
+    category: "Research Methodology",
+    date: "2026-10-13",
+    readingTime: "8 min read",
+    href: "articles/how-to-formulate-a-research-question-in-medical-research.html",
+    featured: true
+  }
 ];
