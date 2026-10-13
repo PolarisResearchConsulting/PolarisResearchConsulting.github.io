@@ -104,3 +104,15 @@ The pastel theme remains unchanged visually, but foreground colors were separate
 - section kickers and blog categories use darker accessible accent text in light mode,
 - dark mode retains pastel accent text where contrast is already sufficient,
 - keyboard focus indicators are more visible.
+
+
+## Phase 6 — Polaris Insights magazine redesign
+
+The blog now includes:
+- four permanent editorial categories,
+- pastel category cards,
+- keyword search and category filtering,
+- featured-story and latest-article layouts,
+- responsive light/dark designs,
+- a refined long-form article reading template,
+- the first published Polaris Insights article.
