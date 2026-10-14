@@ -1,11 +1,21 @@
 (function () {
   const posts = Array.isArray(window.POLARIS_POSTS) ? window.POLARIS_POSTS : [];
+
   const grid = document.getElementById('articleGrid');
   const featured = document.getElementById('featuredArticle');
   const search = document.getElementById('articleSearch');
   const categoryButtons = Array.from(document.querySelectorAll('[data-category]'));
   const summary = document.getElementById('resultsSummary');
   const featuredHeading = document.getElementById('featuredHeading');
+
+  const showAllButton = document.getElementById('showAllArticles');
+  const closeAllButton = document.getElementById('closeAllArticles');
+  const allSection = document.getElementById('all-articles-list');
+  const allSearch = document.getElementById('allArticlesSearch');
+  const allCategory = document.getElementById('allArticlesCategory');
+  const allSort = document.getElementById('allArticlesSort');
+  const allList = document.getElementById('allArticlesList');
+  const allCount = document.getElementById('allArticlesCount');
 
   let activeCategory = 'All';
 
@@ -40,18 +50,20 @@
     return categoryClasses[category] || 'category-research';
   }
 
-  function filteredPosts() {
-    const term = (search?.value || '').trim().toLowerCase();
+  function matchesSearch(post, term) {
+    if (!term) return true;
+    return [post.title, post.excerpt, post.category]
+      .join(' ')
+      .toLowerCase()
+      .includes(term.toLowerCase());
+  }
+
+  function filteredHomepagePosts() {
+    const term = (search?.value || '').trim();
 
     return posts
       .filter(post => activeCategory === 'All' || post.category === activeCategory)
-      .filter(post => {
-        if (!term) return true;
-        return [post.title, post.excerpt, post.category]
-          .join(' ')
-          .toLowerCase()
-          .includes(term);
-      })
+      .filter(post => matchesSearch(post, term))
       .sort((a, b) => String(b.date).localeCompare(String(a.date)));
   }
 
@@ -109,8 +121,8 @@
     `).join('');
   }
 
-  function render() {
-    const items = filteredPosts();
+  function renderHomepage() {
+    const items = filteredHomepagePosts();
     const lead = items[0] || null;
     const rest = items.slice(1);
 
@@ -124,11 +136,7 @@
     renderGrid(rest);
 
     if (summary) {
-      if (!items.length) {
-        summary.textContent = '0 articles';
-      } else {
-        summary.textContent = `${items.length} article${items.length === 1 ? '' : 's'}`;
-      }
+      summary.textContent = `${items.length} article${items.length === 1 ? '' : 's'}`;
     }
 
     categoryButtons.forEach(button => {
@@ -138,7 +146,7 @@
 
   function chooseCategory(category) {
     activeCategory = category || 'All';
-    render();
+    renderHomepage();
 
     const library = document.getElementById('all-articles');
     if (library && activeCategory !== 'All') {
@@ -146,8 +154,74 @@
     }
   }
 
+  function getAllArticleResults() {
+    const term = (allSearch?.value || '').trim();
+    const category = allCategory?.value || 'All';
+    const sort = allSort?.value || 'newest';
+
+    const result = posts
+      .filter(post => category === 'All' || post.category === category)
+      .filter(post => matchesSearch(post, term));
+
+    result.sort((a, b) => {
+      return sort === 'oldest'
+        ? String(a.date).localeCompare(String(b.date))
+        : String(b.date).localeCompare(String(a.date));
+    });
+
+    return result;
+  }
+
+  function renderAllArticles() {
+    if (!allList) return;
+
+    const items = getAllArticleResults();
+
+    if (allCount) {
+      allCount.textContent = `${items.length} article${items.length === 1 ? '' : 's'} found`;
+    }
+
+    if (!items.length) {
+      allList.innerHTML = `
+        <div class="all-articles-empty">
+          <h3>No matching articles found.</h3>
+          <p>Try changing the search term, category, or sort option.</p>
+        </div>`;
+      return;
+    }
+
+    allList.innerHTML = items.map(post => `
+      <article class="all-article-row ${categoryClass(post.category)}">
+        <div class="all-article-main">
+          <span class="magazine-category">${escapeHTML(post.category)}</span>
+          <h3><a href="${escapeHTML(post.href)}">${escapeHTML(post.title)}</a></h3>
+          <p>${escapeHTML(post.excerpt)}</p>
+        </div>
+        <div class="all-article-meta">
+          <span>${escapeHTML(formatDate(post.date))}</span>
+          ${post.readingTime ? `<span>${escapeHTML(post.readingTime)}</span>` : ''}
+          <a class="story-arrow" href="${escapeHTML(post.href)}" aria-label="Read ${escapeHTML(post.title)}">→</a>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  function openAllArticles() {
+    if (!allSection) return;
+    allSection.hidden = false;
+    renderAllArticles();
+    requestAnimationFrame(() => {
+      allSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  function closeAllArticles() {
+    if (!allSection) return;
+    allSection.hidden = true;
+  }
+
   if (search) {
-    search.addEventListener('input', render);
+    search.addEventListener('input', renderHomepage);
   }
 
   categoryButtons.forEach(button => {
@@ -156,5 +230,18 @@
     });
   });
 
-  render();
+  if (showAllButton) {
+    showAllButton.addEventListener('click', openAllArticles);
+  }
+
+  if (closeAllButton) {
+    closeAllButton.addEventListener('click', closeAllArticles);
+  }
+
+  [allSearch, allCategory, allSort].forEach(control => {
+    if (!control) return;
+    control.addEventListener(control.tagName === 'INPUT' ? 'input' : 'change', renderAllArticles);
+  });
+
+  renderHomepage();
 })();
