@@ -2652,3 +2652,210 @@ html[data-mode="dark"] .topic-arrow {
     min-width: 650px;
   }
 }
+
+
+/* ==========================================================
+   Phase 6.2 — navigation + complete article library
+   ========================================================== */
+
+.all-articles-section[hidden] {
+  display: none !important;
+}
+
+.all-articles-section {
+  padding: 0 0 90px;
+  scroll-margin-top: 96px;
+}
+
+.all-articles-panel {
+  padding: clamp(22px, 4vw, 42px);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  box-shadow: var(--shadow-soft);
+}
+
+.all-articles-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+
+.all-articles-heading h2 {
+  margin: 4px 0 8px;
+  font-size: clamp(2.3rem, 4vw, 3.8rem);
+  letter-spacing: -.04em;
+}
+
+.all-articles-heading p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.all-articles-close {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 1.35rem;
+  cursor: pointer;
+}
+
+.all-articles-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(180px, .6fr) minmax(180px, .6fr);
+  gap: 14px;
+  align-items: end;
+  margin-bottom: 14px;
+}
+
+.all-articles-search {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.all-articles-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+}
+
+.filter-control {
+  display: grid;
+  gap: 7px;
+}
+
+.filter-control > span {
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.filter-control select {
+  min-height: 58px;
+  width: 100%;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+.all-articles-count {
+  margin: 6px 0 18px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.all-articles-list {
+  display: grid;
+  gap: 12px;
+}
+
+.all-article-row {
+  --category-card: #f6dde1;
+  --category-ink: #7e3140;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+  padding: 22px 24px;
+  border: 1px solid color-mix(in srgb, var(--category-card) 48%, var(--border));
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--category-card) 82%, var(--surface));
+}
+
+.all-article-main h3 {
+  margin: 12px 0 8px;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  line-height: 1.08;
+  letter-spacing: -.025em;
+}
+
+.all-article-main p {
+  max-width: 850px;
+  margin: 0;
+  color: color-mix(in srgb, var(--text) 72%, var(--muted));
+}
+
+.all-article-meta {
+  min-width: 130px;
+  display: grid;
+  justify-items: end;
+  gap: 7px;
+  color: var(--muted);
+  font-size: .84rem;
+}
+
+.all-article-meta .story-arrow {
+  margin-top: 4px;
+}
+
+.all-articles-empty {
+  padding: 38px;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: 18px;
+  color: var(--muted);
+}
+
+.all-articles-empty h3 {
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .all-articles-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .all-articles-search {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 680px) {
+  .all-articles-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .all-articles-search {
+    grid-column: auto;
+  }
+
+  .all-article-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .all-article-meta {
+    justify-items: start;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .all-article-meta .story-arrow {
+    margin-left: auto;
+    margin-top: 0;
+  }
+}
