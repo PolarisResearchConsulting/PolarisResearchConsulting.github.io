@@ -2859,3 +2859,30 @@ html[data-mode="dark"] .topic-arrow {
     margin-top: 0;
   }
 }
+
+
+/* ==========================================================
+   Article 002 — epidemiology formulas and note
+   ========================================================== */
+
+.article-equation {
+  margin: 22px 0 26px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.article-note {
+  margin-top: 30px !important;
+  padding: 16px 18px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 14px 14px 0;
+  background: var(--surface-2);
+  color: var(--muted) !important;
+  font-size: .94rem;
+}
