@@ -53,9 +53,10 @@
       </a>
 
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="../#services">Services</a>
+                <a href="../">Home</a>
+<a href="../#services">Services</a>
         <a href="../#studio">SampleSize Studio</a>
-        <a href="./" aria-current="page">Insights</a>
+        <a href="./" aria-current="page">Research Blog</a>
         <a href="../#process">How We Work</a>
         <a href="../#" class="contact-trigger">Contact</a>
       </nav>
@@ -67,9 +68,10 @@
     </div>
 
     <div class="container mobile-menu" id="mobileMenu">
-      <a href="../#services">Services</a>
+            <a href="../">Home</a>
+<a href="../#services">Services</a>
       <a href="../#studio">SampleSize Studio</a>
-      <a href="./">Insights</a>
+      <a href="./">Research Blog</a>
       <a href="../#process">How We Work</a>
       <a href="../#" class="contact-trigger">Contact</a>
     </div>
@@ -146,7 +148,7 @@
             <div class="section-kicker">Polaris Insights</div>
             <h2 id="featuredHeading">Featured article</h2>
           </div>
-          <button class="all-articles-reset" type="button" data-category="All">View all articles →</button>
+          <button class="all-articles-reset" id="showAllArticles" type="button">View all articles →</button>
         </div>
 
         <div id="featuredArticle" aria-live="polite"></div>
@@ -158,6 +160,51 @@
         <div id="articleGrid" class="blog-library-grid magazine-grid" aria-live="polite"></div>
       </div>
     </section>
+  
+    <section class="all-articles-section" id="all-articles-list" hidden>
+      <div class="container">
+        <div class="all-articles-panel">
+          <div class="all-articles-heading">
+            <div>
+              <div class="section-kicker">Polaris Insights Library</div>
+              <h2>All articles</h2>
+              <p>Search, filter, and sort every article currently published on Polaris Insights.</p>
+            </div>
+            <button class="all-articles-close" id="closeAllArticles" type="button" aria-label="Close all articles list">×</button>
+          </div>
+
+          <div class="all-articles-controls" aria-label="Article filters">
+            <label class="all-articles-search" for="allArticlesSearch">
+              <span aria-hidden="true">⌕</span>
+              <input id="allArticlesSearch" type="search" placeholder="Search all articles..." autocomplete="off" />
+            </label>
+
+            <label class="filter-control">
+              <span>Category</span>
+              <select id="allArticlesCategory">
+                <option value="All">All categories</option>
+                <option value="Research Methodology">Research Methodology</option>
+                <option value="Epidemiology Simplified">Epidemiology Simplified</option>
+                <option value="Biostatistics in Practice">Biostatistics in Practice</option>
+                <option value="Academic Publishing Playbook">Academic Publishing Playbook</option>
+              </select>
+            </label>
+
+            <label class="filter-control">
+              <span>Sort</span>
+              <select id="allArticlesSort">
+                <option value="newest">Newest to oldest</option>
+                <option value="oldest">Oldest to newest</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="all-articles-count" id="allArticlesCount"></div>
+          <div class="all-articles-list" id="allArticlesList" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
